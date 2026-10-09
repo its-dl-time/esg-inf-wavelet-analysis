@@ -1,0 +1,7 @@
+# UCT extension (US and China)
+
+`python extensions/uct/download_inputs.py` saves the current UCT CSV (Rogers, Sun & Sun, policyuncertainty.com) and monthly Brent from EIA/FRED. Inspect the UCT header and explicitly set its date/value fields, e.g. `UCT_DATE_COLUMN=Date UCT_VALUE_COLUMN=UCT Rscript extensions/uct/conditional_wtc.R` **only if those are the observed names**. The script refuses to guess a field. `UCT_TRANSFORM=diff` (default) uses the first difference of the index; `UCT_TRANSFORM=level` checks the original level. Brent is log MoM. Both countries use their own continuous complete intersection with the controls.
+
+Outputs compare unconditional EPU–INF, partial given UCT or Brent, and multiple INF against EPU+UCT, EPU+Brent or EPU+UCT+Brent, within the shared COI. These are descriptive coherency matrix calculations derived from matched biwavelet pairwise squared WTC and phase. A near singular control matrix is excluded; increasing multiple coherence does not identify EPU's unique effect. No conditional surrogate p-values, causal interpretation or core 18-country claim is supplied. Reconcile the phase convention and positive semidefiniteness of the pairwise matrix before publication.
+
+Primary UCT description: https://www.policyuncertainty.com/US_China_Tension.html . Brent series: https://fred.stlouisfed.org/series/MCOILBRENTEU . Save raw source files and access dates for a replicable analysis; upstream series may be revised.

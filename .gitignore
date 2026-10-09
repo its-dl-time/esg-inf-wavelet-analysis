@@ -1,0 +1,15 @@
+results/core/
+results/smoke/
+results/models/
+results/jobs/
+results/detail/
+results/prepared.rds
+results/*.log
+figures/
+extensions/uct/data/
+extensions/uct/results/
+data/raw/*.csv
+data/processed/core_18.csv
+data/processed/processed_panel.csv
+*.Rhistory
+*.RData
